@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>PUC Registeration</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/nunito-font.css">
+	<!-- Main Style Css -->
+	<link rel="stylesheet" href="css/style.css"/>
+	<!-- Firebase Configuration -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+	<!-- For Authentication -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+	<!-- For Firestore -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-firestore.js"></script>
+	<!-- Javascript File -->
+	<script type="text/javascript" src="JS/script.js"></script>
+</head>
+<body class="form-v6">
+	<div class="page-content">
+		<div class="button1">
+			<input type="button" value="Send SMS" onclick="smsService()">
+		</div>
+		<div class="button2">
+			<input type="button" value="Logout" onclick="logoutUser()">
+		</div>
+		<div class="form-v6-content">
+			<div class="form-left">
+				<img src="images/test1.png" alt="form">
+			</div>
+			<form class="form-detail" action="#" method="post" name='registerForm'>
+				<h2>Registeration</h2>
+				<div class="form-row">
+					<input type="text" name="vehNum" id="vehNum" class="input-text" placeholder="Vehicle Number" required>
+				</div>
+				<div class="form-row">
+					<input type="text" name="mobNum" id="mobNum" class="input-text" placeholder="Mobile Number" required>
+				</div>
+				<div class="form-row">
+					<input type="text" name="expDate" id="expDate" class="input-text" placeholder="Expiry Date" readonly="readonly" required>
+				</div>
+				<div class="myradio">
+					<input type="radio" name="month" id="6" value="6" onchange="extendDateBy6()">
+					<label for="6" style="color: black;">6 Months</label>
+
+					<input type="radio" name="month" id="12" value="12" onchange="extendDateBy12()">
+					<label for="12" style="color: black;">12 Months</label>
+				</div>
+				<div class="form-row-last">
+					<input type="button" name="register" class="register" value="Register" onclick="uploadData()">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
